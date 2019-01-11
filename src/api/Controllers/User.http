@@ -1,0 +1,4 @@
+POST http://localhost:5000/api/user/123/arrived-at-room
+Content-Type: application/json
+
+"value"
