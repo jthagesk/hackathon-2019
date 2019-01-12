@@ -22,7 +22,8 @@ namespace api.Controllers.Recommendation
         public async Task<ActionResult<string>> Get(string userId, double longitude, double latitude)
         {
             //find hotels nearby (longitude, latitude)
-            var hotels = Finder.Execute(longitude, latitude);
+            var hotels = await Finder.Execute(longitude, latitude);
+            return Ok(string.Join(", ", hotels.Select(h => h.Name)));
 
             //har bruker vært på hotellet
             // nærmeste han har vært på
@@ -34,7 +35,7 @@ namespace api.Controllers.Recommendation
 
 
 
-            return Ok("bla");
+            // return Ok("bla");
         }
     }
 }
