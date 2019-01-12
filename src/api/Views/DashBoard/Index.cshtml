@@ -5,16 +5,24 @@
 
 <div class="content">
     <h1>Dashboard</h1>
-    <p> number of requests: @(api.Count.getValue()) </p>
+    <p id="counter"> number of requests: @(api.Count.getValue()) </p>
 </div>
 
 <script>
+    let s = 10;
+
     document.addEventListener("DOMContentLoaded", function() {
-        var form = document.querySelector('form');
-        if (form)
-            form.addEventListener('submit', function() {
-                this.querySelector('button[type="submit"]')
-                    .setAttribute('disabled', 'disabled');
-            }, false);
+        var c = document.querySelector('#counter');
+        setInterval(() => {
+            if (s < 150)
+            {
+                document.getElementById("counter").style.fontSize = s + "px";
+                s += 5;
+            }
+            else 
+                s = 10;
+        }, 100);
     });
 </script>
+
+
