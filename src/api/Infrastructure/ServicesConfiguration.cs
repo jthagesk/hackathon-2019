@@ -14,7 +14,8 @@ namespace api.Infrastructure
                 .AddMemoryCache()
                 .AddSingleton<HostingEnvironment>()
                 .AddScoped<HotelFinder>(p => new HotelFinder(configuration.GetConnectionString("DefaultConnection")))
-                .AddScoped<GetClosestHotelWhereUserHasStayed>(p => new GetClosestHotelWhereUserHasStayed(configuration.GetConnectionString("DefaultConnection")));
+                .AddScoped<GetClosestHotelWhereUserHasStayed>(p => new GetClosestHotelWhereUserHasStayed(configuration.GetConnectionString("DefaultConnection")))
+                .AddScoped<Controllers.Beacon.HotelFinder>(p => new Controllers.Beacon.HotelFinder(configuration.GetConnectionString("DefaultConnection")));
 
             return services;
         }

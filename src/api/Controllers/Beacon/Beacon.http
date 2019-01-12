@@ -1,0 +1,4 @@
+GET http://localhost:5000/api/beacon/B9407F30-F5F8-466E-AFF9-25556B57FE6D
+
+###
+GET http://1001-api.azurewebsites.net/api/beacon/B9407F30-F5F8-466E-AFF9-25556B57FE6D
