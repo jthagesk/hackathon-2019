@@ -23,7 +23,7 @@ namespace api.Controllers.Recommendation
 
         // GET api/values/5
         [HttpGet("{userId}")]
-        public async Task<ActionResult<string>> Get(string userId, double longitude, double latitude)
+        public async Task<ActionResult<Hotel>> Get(string userId, double longitude, double latitude)
         {
             //find hotels nearby (longitude, latitude)
             var hotels = await Finder.Execute(longitude, latitude);
@@ -41,7 +41,7 @@ namespace api.Controllers.Recommendation
 
             //ikke vært på hotell -> mest populære hotell
 
-            return NotFound("blæh");
+            return Ok(hotels.FirstOrDefault());
         }
     }
 }
