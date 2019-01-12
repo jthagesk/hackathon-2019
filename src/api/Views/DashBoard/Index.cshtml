@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<div class="content">
+    <h1>Dashboard</h1>
+    <p> number of requests: @(api.Count.getValue()) </p>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var form = document.querySelector('form');
+        if (form)
+            form.addEventListener('submit', function() {
+                this.querySelector('button[type="submit"]')
+                    .setAttribute('disabled', 'disabled');
+            }, false);
+    });
+</script>

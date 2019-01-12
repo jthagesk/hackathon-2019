@@ -44,7 +44,12 @@ namespace api
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Dashboard}/{action=Index}/{id?}");
+            });
         }
     }
 }

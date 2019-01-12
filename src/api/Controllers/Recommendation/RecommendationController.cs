@@ -25,6 +25,7 @@ namespace api.Controllers.Recommendation
         [HttpGet("{userId}")]
         public async Task<ActionResult<Hotel>> Get(string userId, double longitude, double latitude)
         {
+            Count.inc();
             //find hotels nearby (longitude, latitude)
             var hotels = await Finder.Execute(longitude, latitude);
 

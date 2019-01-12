@@ -13,7 +13,8 @@ namespace api.Infrastructure
             services
                 .AddMemoryCache()
                 .AddSingleton<HostingEnvironment>()
-                .AddScoped<HotelFinder>(p => new HotelFinder(configuration.GetConnectionString("DefaultConnection")));
+                .AddScoped<HotelFinder>(p => new HotelFinder(configuration.GetConnectionString("DefaultConnection")))
+                .AddScoped<GetClosestHotelWhereUserHasStayed>(p => new GetClosestHotelWhereUserHasStayed(configuration.GetConnectionString("DefaultConnection")));
 
             return services;
         }
