@@ -24,7 +24,7 @@ namespace api.Controllers.Beacon
             }
         }
 
-        public async Task<IEnumerable<Hotel>> Execute(string hotelCode)
+        public async Task<Hotel> Execute(string hotelCode)
         {
             using (IDbConnection conn = Connection)
             {
@@ -37,7 +37,7 @@ namespace api.Controllers.Beacon
 
                 conn.Open();
                 var result = (await conn.QueryAsync<Hotel>(sQuery, new { hotelCode })).ToArray();
-                return result;
+                return result.FirstOrDefault();
             }
         }
     }
