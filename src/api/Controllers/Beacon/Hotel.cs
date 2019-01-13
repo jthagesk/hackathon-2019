@@ -1,4 +1,4 @@
-namespace api.Controllers.Recommendation
+namespace api.Controllers.Beacon
 {
     public class Hotel
     {

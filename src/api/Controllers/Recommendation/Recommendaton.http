@@ -1,1 +1,4 @@
-GET http://localhost:5000/api/recommendation/123
+GET http://localhost:5000/api/recommendation/123?latitude=58.145626&longitude=7.996038
+
+###
+GET http://1001-api.azurewebsites.net/api/recommendation/123?latitude=58.145626&longitude=7.996038

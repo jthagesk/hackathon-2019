@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<div class="content">
+    <br>
+    <br>
+    <h1>__Dashboard__</h1>
+    <p id="counter"> number of requests: @(api.Count.getValue()) </p>
+</div>
+
+<script>
+    let s = 10;
+
+    document.addEventListener("DOMContentLoaded", function() {
+        setInterval(() => {
+            if (s < 180)
+            {
+                document.getElementById("counter").style.fontSize = s + "px";
+                s += 5;
+            }
+            else 
+                s = 10;
+        }, 100);
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        setInterval(() => {
+            const url = '/api/request';
+            fetch(url)
+            .then((resp) => resp.json())
+            .then(function(data) {
+                document.getElementById("counter").innerHTML = "number of requests: " + data;
+                    });
+                    }, 500);
+    });
+</script>
+
+
