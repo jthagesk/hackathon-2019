@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Alexa.NET" Version="1.5.7" />
+    <PackageReference Include="Amazon.Lambda.Core" Version="1.0.0" />
     <PackageReference Include="dapper" Version="1.50.5" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
